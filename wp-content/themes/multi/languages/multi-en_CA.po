@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Multi\n"
+"POT-Creation-Date: 2016-02-21 15:46-0500\n"
+"PO-Revision-Date: 2016-02-21 15:47-0500\n"
+"Last-Translator: Edward Caissie <edward.caissie@gmail.com>\n"
+"Language-Team: Edward Caissie <edward.caissie@gmail.com>\n"
+"Language: en_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: header.php:82
+msgid "Add this blog to any reader"
+msgstr "Add this blog to any reader"
+
+#: header.php:83
+msgid "Coffee cup image used as visual link"
+msgstr "Coffee cup image used as visual link"
+
+#. Theme Name of the plugin/theme
+msgid "Multi"
+msgstr "Multi"
+
+#. Theme URI of the plugin/theme
+msgid "http://buynowshop.com/themes/desk-mess-mirrored/multi/"
+msgstr "http://buynowshop.com/themes/desk-mess-mirrored/multi/"
+
+#. Description of the plugin/theme
+msgid ""
+"Child-Theme of Desk Mess Mirrored - Marble desktop covered with a mix of old "
+"and new items, such as some vintage papers, a stainless steel pen, and, a "
+"hot cup of coffee! Please read the included changelog.txt, readme.txt, and "
+"support.txt files for the details of the latest changes and other important "
+"information."
+msgstr ""
+"Child-Theme of Desk Mess Mirrored - Marble desktop covered with a mix of old "
+"and new items, such as some vintage papers, a stainless steel pen, and, a "
+"hot cup of coffee! Please read the included changelog.txt, readme.txt, and "
+"support.txt files for the details of the latest changes and other important "
+"information."
+
+#. Author of the plugin/theme
+msgid "Edward Caissie"
+msgstr "Edward Caissie"
+
+#. Author URI of the plugin/theme
+msgid "http://edwardcaissie.com/"
+msgstr "http://edwardcaissie.com/"

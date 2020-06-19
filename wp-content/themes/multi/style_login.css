@@ -1,0 +1,39 @@
+body.login
+{
+    background-image: url('/wp-content/themes/multi/images/marble-bg.png') ;
+}
+.login h1 a 
+{
+    background-image: url('/wp-content/themes/multi/images/logo1.png');
+}
+#loginform .input
+{
+    background: #f4e2bb;
+}
+#loginform
+{
+    background: #f2d089;;
+}
+.wp-core-ui .button-primary
+{
+    background: #bb3a2b;
+    border-color: #bb3a2b;
+}
+.wp-core-ui .button-primary:hover
+{
+    background: #d21600;
+    border-color: #bb3a2b;
+}
+.login #backtoblog a, .login #nav a
+{
+    color: #f2d089;
+    font-size: 110%;
+    font-weight: bold;
+}
+.login #backtoblog a:hover, .login #nav a:hover{
+    color: #fff2d7;
+}
+.login form
+{
+    background: #f2d089;;
+}
