@@ -10,11 +10,16 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 
 <div id="mainwrap">
-
+		<!-- Прогресс бар -->
+<div class = "header">
+<div class = "progress-container">
+	<div class="progress-bar" id="myBar" ></div>
+ </div>
+ </div>
+<!-- /Прогресс бар -->
 	<div id="header-container">
 
 		<div id="header"> <!-- header -->

@@ -36,14 +36,6 @@ if ( ! function_exists( 'dmm_enqueue_comment_reply' ) ) {
 }
 add_action( 'comment_form_before', 'dmm_enqueue_comment_reply' );
 
-function scripts()
-{
-	// подключение js 
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('script-js', get_template_directory_uri() . '/js/script.js');
-
-}
-add_action( 'wp_enque_script', 'scripts');
 
 if ( ! function_exists( 'dmm_wp_title' ) ) {
 	/**
@@ -898,4 +890,52 @@ function change_alt ($responce)
 		$responce['alt']= sanitize_text_field($responce['title']);
 	}
 	return $responce;
+}
+function my_scripts_method() {
+	wp_deregister_script( 'jquery' ); // отменяем зарегистрированный jQuery
+	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js', false, null, false );
+	wp_enqueue_script( 'jquery' );
+ wp_enqueue_script( 'script.js', get_bloginfo( 'template_directory' ).'/js/script.js', array( 'jquery' ), null, false );
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
+
+// Код обрабатывающий форму (form)
+if(isset($_POST['reservebutton']))
+{
+
+include(get_template_directory() . "/hotelpro/database.php");
+print_r($conn);
+print_r($_POST);
+if(isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['firstname']) && isset($_POST['roomclass']) && 
+isset($_POST['startDate']) && isset($_POST['countDays'])  && isset($_POST['roomID']))
+{
+    $fname = htmlentities(mysqli_real_escape_string($_POST['firstname']));
+    $lname  = htmlentities(mysqli_real_escape_string($_POST['lastname']));
+    $patronomyc = htmlentities(mysqli_real_escape_string($_POST['patronomyc']));
+    $roomclass = htmlentities(mysqli_real_escape_string($_POST['roomclass']));
+    $startdate = htmlentities(mysqli_real_escape_string($_POST['stardate']));
+    $countDays = htmlentities(mysqli_real_escape_string($_POST['countDays']));
+    $roomID = htmlentities(mysqli_real_escape_string($_POST['roomID']));
+    // Добавление брони в бд
+    print_r($conn);
+
+    // Добавление ФИО клиента
+    $queryID ="SELECT id FROM customers VALUES('$fname','$lname')";
+    $result = mysqli_query($conn, $queryID) or die("Ошибка " . mysqli_error($link));
+    if($result == 0){
+    $query ="INSERT INTO customers VALUES(NULL, '$fname','$lname')";
+    $result = mysqli_query($conn, $query) or die("Ошибка " . mysqli_error($link));
+    $queryID ="SELECT id FROM customers VALUES('$fname','$lname')";
+    $result = mysqli_query($conn, $queryID) or die("Ошибка " . mysqli_error($link));
+    }
+    // 
+    while ($row = mysqli_fetch_row($result)) {
+        echo "<tr>";
+            for ($j = 0 ; $j < 3 ; ++$j) echo "<td>$row[$j]</td>";
+        echo "</tr>";
+    }
+    //$query ="INSERT INTO reserves VALUES(NULL, '$fname','$lname')";
+    //$query ="INSERT INTO reserves VALUES(NULL, '$fname','$lname')"; 
+}
 }

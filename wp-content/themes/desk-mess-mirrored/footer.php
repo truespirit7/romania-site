@@ -7,10 +7,12 @@
 <div id="bottom-extended">
 
 	<div id="bottom-container">
+	
 		<p>
-			
+
 		</p>
 		<?php wp_footer(); ?>
+
 	</div>
 	<!-- #bottom-container -->
 </div> <!-- #bottom-extended -->

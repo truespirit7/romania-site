@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single Template
  * Displays single post
@@ -23,34 +24,31 @@
 
 get_header(); ?>
 
-	<div id="maintop"></div>
+<div id="maintop"></div>
+<div id="wrapper">
+	<div id="content">
+		<div id="main-blog">
+			<?php if (have_posts()) {
 
-	<div id="wrapper">
-		<div id="content">
+				while (have_posts()) {
+					the_post();
+					get_template_part('desk-mess-mirrored', get_post_format());
+				}
+			} else {
 
-			<div id="main-blog">
-				<?php if ( have_posts() ) {
-
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'desk-mess-mirrored', get_post_format() );
-					}
-
-				} else {
-
-					dmm_no_posts_found();
-
-				} ?>
-
-			</div>
-			<!--end main blog-->
-
-			<?php get_sidebar(); ?>
-
-			<div class="clear"></div>
+				dmm_no_posts_found();
+			} ?>
 
 		</div>
-		<!--end content-->
-	</div><!--end wrapper-->
+		<!--end main blog-->
+
+
+		<?php get_sidebar(); ?>
+		<div class="clear"></div>
+
+	</div>
+	<!--end content-->
+</div>
+<!--end wrapper-->
 
 <?php get_footer();
